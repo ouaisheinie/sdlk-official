@@ -1,7 +1,11 @@
 import { ReactNode, useState } from "react"
 import styles from "./index.module.scss"
 
-export default function contentLayout({ children }: ReactNode) {
+interface propsTypes {
+    children: ReactNode
+}
+
+export default function contentLayout({ children }: propsTypes) {
 	return (
 		<>
 			<div className={styles.layout}>

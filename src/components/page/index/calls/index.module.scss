@@ -1,0 +1,30 @@
+.calls {
+    width: 100%;
+    position: relative;
+    .calls_text_container {
+        display: flex;
+        .calls_text {
+            width: 440px;
+            margin-right: 80px;
+            margin-top: 140px;
+            .title {
+                font-family: "OPPOSans";
+                font-size: 40px;
+                font-weight: bold;
+                line-height: 52px;
+            }
+            .desc {
+                font-size: 16px;
+                line-height: 21px;
+                color: #182F39;
+                opacity: .25;
+                margin-top: 4px;
+                font-family: "OPPOSans";
+            }
+        }
+        .calls_swiper {
+            width: 800px;
+            margin-top: 120px;
+        }
+    }
+}

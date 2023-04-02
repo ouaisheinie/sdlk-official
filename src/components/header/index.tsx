@@ -1,18 +1,18 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, ReactNode } from "react"
 import styles from './index.module.scss'
 import Image from 'next/image'
 import Link from 'next/link'
 import ContentLayout from "@/components/layoutcomp"
 import { useLangs } from '@/common/utils/langs'
 
-export default function Header(props) {
+export default function Header(props: unknown) {
 	return (
 		<>
 			<div className={styles.header}>
 				<ContentLayout>
 					<div className={styles.logo_navbar}>
 						<div className={styles.logo}>
-							<Image objectFit='contain' layout="fill" object-fit="contain" src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/sdlk-logo.png" alt="STARLINKE"/>
+							<Image objectFit='contain' layout="fill" src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/sdlk-logo.png" alt="STARLINKE"/>
 						</div>
 						<div className={styles.navbar}>
 							<div className={styles.navItem}>

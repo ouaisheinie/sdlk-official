@@ -1,0 +1,22 @@
+.circle_container {
+    width: 240px;
+    height: 480px;
+    overflow: hidden;
+    position: absolute;
+    top: -180px;
+    @mixin circle_div_common_style {
+        border-radius: 50%;
+        background: linear-gradient(to bottom, rgba(255, 139, 8, 0), #FF8B08);
+        width: 480px;
+        height: 480px;    
+    }
+
+    .circle_div_left, .circle_div_right {
+        @include circle_div_common_style;
+    }
+    
+    .circle_div_left {
+        position: relative;
+        right: 240px;
+    }
+}
