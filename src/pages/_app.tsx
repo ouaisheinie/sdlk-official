@@ -4,6 +4,10 @@ import { createContext } from 'react'
 import { lang_cn } from "@/common/lang/cn"
 import { lang_en } from "@/common/lang/en"
 import { LangDataType } from "@/common/interface"
+import 'swiper/css'
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import 'swiper/css/scrollbar';
 
 const langdata: LangDataType = {
 	cn: lang_cn,

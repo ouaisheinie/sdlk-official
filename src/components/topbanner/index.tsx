@@ -2,11 +2,11 @@ import { ReactNode, useState } from "react"
 import styles from "./index.module.scss"
 import { useLangs } from '@/common/utils/langs'
 
-interface propsTypes {
+interface PropsTypes {
     children?: ReactNode
 }
 
-export default function TopBanner(props: propsTypes) {
+export default function TopBanner(props: PropsTypes) {
 	return (
 		<div className={styles.banner}>
             <picture>

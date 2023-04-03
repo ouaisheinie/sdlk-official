@@ -2,3 +2,59 @@
     margin: 0;
     padding: 0;
 }
+.mySwiper .swiper-pagination .swiper-pagination-bullet-active {
+    width: 6px;
+    height: 6px;
+}
+.mySwiper .swiper-pagination .swiper-pagination-bullet {
+    width: 6px;
+    height: 6px;
+}
+.mySwiper {
+    position: relative;
+    --swiper-navigation-size: 30px;
+    --swiper-theme-color: #182F39;
+}
+.mySwiper .swiper-button-next {
+    transition: all .2s;
+    position: absolute;
+    top: 550px;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    border-radius: 50%;
+    color: #FF8B08;
+    background: rgba(255, 139, 8, 0.07);
+}
+.mySwiper .swiper-button-next::after {
+    position: relative;
+    left: 3px;
+}
+.mySwiper .swiper-button-next:hover {
+    transition: all .2s;
+    color: #ffffff;
+    background: #FF8B08;
+}
+.mySwiper .swiper-button-prev {
+    position: absolute;
+    top: 550px;
+    bottom: 75px;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    border-radius: 50%;
+    color: #FF8B08;
+    background: rgba(255, 139, 8, 0.07);
+}
+.mySwiper .swiper-button-prev::after {
+    position: relative;
+    right: 3px;
+}
+.mySwiper .swiper-button-prev:hover {
+    transition: all .2s;
+    color: #ffffff;
+    background: #FF8B08;
+}
+.mySwiper .contentOne-slide {
+    padding-top: 30px;
+} 

@@ -1,0 +1,14 @@
+.marquee_container {
+    width: 2200px;
+    position: relative;
+    display: flex;
+    .image_container {
+        .img {
+            display: inline-block;
+            width: 200px;
+            height: 200px;
+            border-radius: 40px;
+            margin-left: 20px;
+        }
+    }
+}

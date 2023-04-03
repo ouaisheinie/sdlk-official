@@ -4,13 +4,13 @@ import { useLangs } from '@/common/utils/langs'
 
 type Circle_Direction = 'left' | 'right'
 
-interface propsTypes {
+interface PropsTypes {
     children?: ReactNode,
     style_obj?: object,
     dir: Circle_Direction
 }
 
-export default function TopBanner(props: propsTypes) {
+export default function TopBanner(props: PropsTypes) {
 	return (
         <div className={styles.circle_container}>
             {
