@@ -3,7 +3,6 @@
     height: 480px;
     overflow: hidden;
     position: absolute;
-    top: -180px;
     @mixin circle_div_common_style {
         border-radius: 50%;
         background: linear-gradient(to bottom, rgba(255, 139, 8, 0), #FF8B08);
@@ -19,4 +18,10 @@
         position: relative;
         right: 240px;
     }
+    .circle_div_right {
+
+    }
+}
+.right_position {
+    right: 0;
 }

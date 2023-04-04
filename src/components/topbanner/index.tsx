@@ -12,7 +12,10 @@ export default function TopBanner(props: PropsTypes) {
             <picture>
                 <img className={styles.img} src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/topBanner.png" alt="STARLINK" />
             </picture>
-            <p className={styles.title}>{ useLangs('homepage', 'topbanner_title') }</p>
+            <div className={styles.text}>
+                <p className={styles.will}>{ useLangs('homepage', 'will') }</p>
+                <p className={styles.title}>{ useLangs('homepage', 'topbanner_title') }</p>
+            </div>
 		</div>
 	)
 }

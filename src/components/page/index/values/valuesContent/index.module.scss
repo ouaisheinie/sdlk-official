@@ -1,0 +1,39 @@
+.value_container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    .value_img {
+        width: 600px;
+        height: 100%;
+        .img {
+            display: inline-block;
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .value_text {
+        width: 720px;
+        height: 100%;
+        font-family: 'OPPOSans';
+        background: #ffffff;
+        padding: 0 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+            font-size: 28px;
+            line-height: 37px;
+            color: #182F39;
+            margin-bottom: 16px;
+        }
+        .desc {
+            font-size: 16px;
+            line-height: 21px;
+            color: rgba(24, 47, 57, 0.75);
+        }
+    }
+}

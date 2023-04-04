@@ -1,8 +1,8 @@
-import { useState, useContext } from "react"
-import { useLangs } from '@/common/utils/langs'
 import Header from '@/components/header'
 import TopBanner from '@/components/topbanner'
 import Calls from '@/components/page/index/calls'
+import Values from '@/components/page/index/values'
+import MileStone from '@/components/page/index/milestone'
 
 export default function Home() {
 	return (
@@ -10,6 +10,8 @@ export default function Home() {
             <Header />
             <TopBanner />
             <Calls />
+			<Values />
+			<MileStone />
 		</div>
 	)
 }

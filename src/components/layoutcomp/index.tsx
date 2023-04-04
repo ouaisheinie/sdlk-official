@@ -7,10 +7,10 @@ interface PropsTypes {
 
 export default function contentLayout({ children }: PropsTypes) {
 	return (
-		<>
+		<div>
 			<div className={styles.layout}>
 				{ children }
 			</div>
-		</>
+		</div>
 	)
 }

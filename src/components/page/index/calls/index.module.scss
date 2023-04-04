@@ -7,25 +7,34 @@
             width: 440px;
             margin-right: 80px;
             margin-top: 140px;
-            .title {
-                font-family: "OPPOSans";
-                font-size: 40px;
-                font-weight: bold;
-                line-height: 52px;
-            }
-            .desc {
-                font-size: 16px;
-                line-height: 21px;
-                color: #182F39;
-                opacity: .25;
-                margin-top: 4px;
-                font-family: "OPPOSans";
+            .title_desc_container {
+                width: 100%;
+                height: 100%;
+                position: relative;
+                z-index: 10;
+                .title {
+                    font-family: "OPPOSans";
+                    font-size: 40px;
+                    font-weight: bold;
+                    line-height: 52px;
+                    z-index: 10;
+                }
+                .desc {
+                    font-size: 16px;
+                    line-height: 21px;
+                    color: #182F39;
+                    opacity: .25;
+                    margin-top: 4px;
+                    font-family: "OPPOSans";
+                    z-index: 10;
+                }
             }
         }
         .calls_swiper {
             width: 800px;
             height: 660px;
             margin-top: 120px;
+            z-index: 10;
         }
     }
 }
