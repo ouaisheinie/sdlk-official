@@ -67,10 +67,10 @@ const Values: React.FC<PropsTypes> = props => {
                     <div className={styles.tabline}>
                         {
                             tabdata.map((item, index) => {
-                                if (index === selected_num) return <div className={styles.tabItem}>
+                                if (index === selected_num) return <div className={styles.tabItem} key={index}>
                                     <div className={`${styles.tab_text} ${styles.tab_selected}`}>{ item.tab_name }</div>
                                 </div>
-                                else return <div className={styles.tabItem} onClick={() => setSelected_num(item.id - 1)}>
+                                else return <div className={styles.tabItem} onClick={() => setSelected_num(item.id - 1)} key={index}>
                                     <div className={styles.tab_text}>{item.tab_name }</div>
                                 </div>
                             })

@@ -7,27 +7,25 @@ import { useLangs } from '@/common/utils/langs'
 
 export default function Header(props: unknown) {
 	return (
-		<>
-			<div className={styles.header}>
-				<ContentLayout>
-					<div className={styles.logo_navbar}>
-						<div className={styles.logo}>
-							<Image objectFit='contain' layout="fill" src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/sdlk-logo.png" alt="STARLINKE"/>
+		<div className={styles.header}>
+			<ContentLayout>
+				<div className={styles.logo_navbar}>
+					<div className={styles.logo}>
+						<Image objectFit='contain' layout="fill" src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/sdlk-logo.png" alt="STARLINKE"/>
+					</div>
+					<div className={styles.navbar}>
+						<div className={styles.navItem}>
+							<Link href="/">{ useLangs('common', 'aboutus') }</Link>
 						</div>
-						<div className={styles.navbar}>
-							<div className={styles.navItem}>
-								<Link href="/">{ useLangs('common', 'aboutus') }</Link>
-							</div>
-							<div className={styles.navItem}>
-								<Link href="/ourbrand">{ useLangs('common', 'abond') }</Link>
-							</div>
-							<div className={styles.navItem}>
-								<Link href="/joinus">{ useLangs('common', 'joinus') }</Link>
-							</div>
+						<div className={styles.navItem}>
+							<Link href="/ourbrand">{ useLangs('common', 'abond') }</Link>
+						</div>
+						<div className={styles.navItem}>
+							<Link href="/joinus">{ useLangs('common', 'joinus') }</Link>
 						</div>
 					</div>
-				</ContentLayout>
-			</div>
-		</>
+				</div>
+			</ContentLayout>
+		</div>
 	)
 }

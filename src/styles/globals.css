@@ -2,6 +2,23 @@
     margin: 0;
     padding: 0;
 }
+
+@font-face {
+    font-family: "OPlusSans Bold";
+    src: url("https://s3.ap-east-1.amazonaws.com/starlinke.com/font/OPlusSans3-Bold.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "OPlusSans Regular";
+    src: url("https://s3.ap-east-1.amazonaws.com/starlinke.com/font/OPlusSans3-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* swiper */
 .mySwiper .swiper-pagination .swiper-pagination-bullet-active {
     width: 6px;
     height: 6px;
