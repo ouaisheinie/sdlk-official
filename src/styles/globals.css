@@ -74,4 +74,38 @@
 }
 .mySwiper .contentOne-slide {
     padding-top: 30px;
-} 
+}
+
+
+.milestone-Swiper {
+    --swiper-navigation-size: 30px
+}
+.milestone-Swiper .swiper-button-prev {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    border-radius: 50%;
+    color: #FF8B08;
+    background: rgba(255, 139, 8, 0.07);
+    margin-left: 130px;
+}
+.milestone-Swiper .swiper-button-next {
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    border-radius: 50%;
+    color: #FF8B08;
+    background: rgba(255, 139, 8, 0.07);
+    margin-right: 130px;
+}
+.milestone-Swiper .swiper-button-next::after {
+    position: relative;
+    left: 3px;
+}
+.milestone-Swiper .swiper-button-prev::after {
+    position: relative;
+    right: 3px;
+}
+.milestone-Swiper .swiper-button-disabled {
+    display: none;
+}
