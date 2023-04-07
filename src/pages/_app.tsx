@@ -1,6 +1,6 @@
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
-import { createContext } from 'react'
+import { createContext, useState } from 'react'
 import { lang_cn } from "@/common/lang/cn"
 import { lang_en } from "@/common/lang/en"
 import { LangDataType } from "@/common/interface"
@@ -14,10 +14,18 @@ const langdata: LangDataType = {
 	en: lang_en
 }
 
-export const C_Content = createContext({})
+interface langInterface {
+    langdata?: LangDataType
+    lang: string
+    setLang?: any
+}
+
+export const C_Content = createContext<langInterface>({} as langInterface)
 
 export default function App({ Component, pageProps }: AppProps) {
-	return <C_Content.Provider value={{ langdata, lang: 'cn' }}>
+	const [lang, setLang] = useState<string>('cn')
+
+	return <C_Content.Provider value={{ langdata, lang, setLang }}>
 		<Component {...pageProps} />
 	</C_Content.Provider>
 }

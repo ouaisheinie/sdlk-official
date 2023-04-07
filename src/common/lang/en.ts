@@ -5,5 +5,8 @@ export const lang_en: LangType = {
         aboutus: "about us",
         abond: "our abond",
         joinus: "join us"
+    },
+    homepage: {
+        
     }
 }

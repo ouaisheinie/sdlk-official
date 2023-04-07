@@ -1,10 +1,46 @@
 .pagination_container {
     margin-top: 30px;
-    overflow: hidden;
+    margin-bottom: 30px;
     .pagination_line {
         width: 1492px;
         height: 2px; 
         background: #DDDDDD;
         margin: 0 518px;
+        padding-left: 120px;
+        display: flex;
+        justify-content: flex-start;
+        position: relative;
+        .pagination_item {
+            width: 13px;
+            height: 13px;
+            margin-right: 88px;
+            position: relative;
+            .normal_style {
+                position: absolute;
+                width: 13px;
+                height: 13px;
+                top: -6px;
+                border-radius: 50%;
+                z-index: 10;
+            }
+            .current_style {
+                position: absolute;
+                z-index: 11;
+                width: 41px;
+                height: 41px;
+                border-radius: 50%;
+                top: -20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .current_fillimg {
+                    display: inline-block;
+                    height: 22px;
+                    position: relative;
+                    top: 2px;
+                    left: 1px;
+                }
+            }
+        }
     }
 }

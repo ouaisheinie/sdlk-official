@@ -4,7 +4,9 @@ export const lang_cn: LangType = {
     common: {
         aboutus: "关于我们",
         abond: "我们的品牌",
-        joinus: "加入我们"
+        joinus: "加入我们",
+        contace_us: '联系我们',
+        recruitment: '社会招聘'
     },
     homepage: {
         will: "愿景",

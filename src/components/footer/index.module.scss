@@ -1,0 +1,66 @@
+.footer {
+    width: 100%;
+    height: 322px;
+    background: #FF8B08;
+    font-family: "OPlusSans Regular";
+    .footer_container {
+        width: 100%;
+        height: 322px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        .columns {
+            display: flex;
+            .column {
+                width: 25%;
+                h2 {
+                    color: #ffffff;
+                    font-size: 18px;
+                    line-height: 24px;
+                    margin-bottom: 16px;
+                    user-select: none;
+                }
+                .columnItem {
+                    user-select: none;
+                    margin-bottom: 16px;
+                    a {
+                        text-decoration: none;
+                        color: #ffffff;
+                        cursor: pointer;
+                    }
+                    .starlinke_logo {
+                        display: inline-block;
+                        width: 166px;
+                        height: 40px;
+                    }
+                }
+            }
+            .column_one {
+                margin-top: 80px;
+            }
+            .column_other {
+                margin-top: 94px;
+            }
+        }
+        .bottom {
+            width: 100%;
+            height: 58px;
+            border-top: 1px solid #ffffff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #ffffff;
+            .langs {
+                height: 17px;
+                overflow: hidden;
+                select {
+                    height: 17px;
+                    border: none;
+                    background: #FF8B08;
+                    color: #ffffff;
+                    padding: 0px;
+                }
+            }
+        }
+    }
+}

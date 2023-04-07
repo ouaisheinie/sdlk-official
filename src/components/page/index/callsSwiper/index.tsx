@@ -58,7 +58,7 @@ export default function CallsSwiper(props: PropsTypes) {
                 navigation
                 pagination={{ clickable: true }}
                 onSlideChange={swiper => swiperSlideChange(swiper.activeIndex)}
-                onSwiper={(swiper) => console.log(swiper)}
+                onSwiper={(swiper) => console.log('onswiper')}
             >
                 {
                     itemData.map((item, index) => {
