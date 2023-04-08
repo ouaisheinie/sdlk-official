@@ -11,9 +11,13 @@ interface HomeProps {
 	cookielang: string
 }
 
-export default function Home(props: HomeProps) {
+export default function Home(props: HomeProps ) {
 	const { langdata, lang, setLang } = useContext(C_Content)
-	setLang(props.cookielang)
+
+    if (props.cookielang && lang !== props.cookielang) {
+        setLang(props.cookielang)
+    }
+
 	return (
 		<div style={{ background: '#f5f5f5' }}>
             <Header />
@@ -27,7 +31,7 @@ export default function Home(props: HomeProps) {
 }
 
 export async function getServerSideProps(context: any) {
-	const cookielang = getCookie('cookie_lang', context)
+	const cookielang = getCookie('cookie_lang', context) || ''
 	return {
 		props: {
 			cookielang
