@@ -1,0 +1,79 @@
+.container {
+    width: 840px;
+    margin: 0 auto;
+    position: relative;
+    .logoImage_container {
+        width: 120px;
+        height: 120px;
+        position: absolute;
+        top: -60px;
+        left: 0px;
+        .logoImage {
+            display: inline-block;
+            width: 62px;
+            height: 58px;
+            padding: 31px 29px;
+        }
+    }
+    .text_container {
+        padding-top: 120px;
+        font-family: "OPlusSans Regular";
+        .title {
+            font-size: 40px;
+            line-height: 52px;
+        }
+        .desc {
+            margin-top: 20px;
+            font-size: 16px;
+            line-height: 21px;
+            color: rgba(0, 0, 0, 0.5);
+        }
+        .hr {
+            margin-top: 40px;
+            margin-bottom: 60px;
+        }
+        .scores {
+            display: flex;
+            justify-content: space-between;
+            .scroeItem {
+                width: 200px;
+                .title {
+                    font-size: 32px;
+                    line-height: 42px;
+                }
+                .desc {
+                    font-size: 14px;
+                    line-height: 18px;
+                    margin-top: 8px;
+                    color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+        .buttondiv {
+            transition: all .2s;
+            display: inline-block;
+            box-sizing: border-box;
+            width: 229px;
+            height: 64px;
+            font-size: 18px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #9F5123;
+            border: 2px solid #9F5123;
+            border-radius: 40px;
+            margin: 80px auto 0;
+            text-decoration: none;
+            .arrowRight {
+                position: relative;
+                top: -1px;
+                left: 9px;
+            }
+            &:hover {
+                transition: all .2s;
+                background-color: #9F5123;
+                color: #ffffff;
+            }
+        }
+    }
+}

@@ -1,5 +1,4 @@
 .header {
-    background-color: #FF8B08;
     height: 100px;
     display: flex;
     align-items: center;
@@ -20,6 +19,7 @@
                 line-height: 21px;
                 padding: 12px 28px;
                 cursor: pointer;
+                border-radius: 40px;
                 & > a {
                     text-decoration: none;
                     color: #ffffff;

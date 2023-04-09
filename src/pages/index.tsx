@@ -1,3 +1,4 @@
+import { ReactNode, useContext } from "react";
 import Header from '@/components/header'
 import TopBanner from '@/components/topbanner'
 import Calls from '@/components/page/index/calls'
@@ -5,18 +6,14 @@ import Values from '@/components/page/index/values'
 import MileStone from '@/components/page/index/milestone'
 import Footer from '@/components/footer'
 import { getCookie } from '@/common/utils/index'
-import { C_Content } from "@/pages/_app"
-import { useContext } from "react"
+import { useInjectLang } from '@/common/utils/langs'
+
 interface HomeProps {
 	cookielang: string
 }
 
-export default function Home(props: HomeProps ) {
-	const { langdata, lang, setLang } = useContext(C_Content)
-
-    if (props.cookielang && lang !== props.cookielang) {
-        setLang(props.cookielang)
-    }
+export default function Home(props: HomeProps ): ReactNode {
+	useInjectLang(props.cookielang)
 
 	return (
 		<div style={{ background: '#f5f5f5' }}>
@@ -31,7 +28,7 @@ export default function Home(props: HomeProps ) {
 }
 
 export async function getServerSideProps(context: any) {
-	const cookielang = getCookie('cookie_lang', context) || ''
+	const cookielang = getCookie('cookie_lang', context) || 'cn'
 	return {
 		props: {
 			cookielang
