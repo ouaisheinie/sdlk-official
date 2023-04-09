@@ -49,7 +49,7 @@
                 }
             }
         }
-        .buttondiv {
+        @mixin buttondiv {
             transition: all .2s;
             display: inline-block;
             box-sizing: border-box;
@@ -59,8 +59,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            color: #9F5123;
-            border: 2px solid #9F5123;
             border-radius: 40px;
             margin: 80px auto 0;
             text-decoration: none;
@@ -69,6 +67,21 @@
                 top: -1px;
                 left: 9px;
             }
+        }
+        .buttondiv_vivaia {
+            @include buttondiv;
+            color: #9F5123;
+            border: 2px solid #9F5123;
+            &:hover {
+                transition: all .2s;
+                background-color: #9F5123;
+                color: #ffffff;
+            }
+        }
+        .buttondiv_fanka {
+            @include buttondiv;
+            color: #9F5123;
+            border: 2px solid #9F5123;
             &:hover {
                 transition: all .2s;
                 background-color: #9F5123;
