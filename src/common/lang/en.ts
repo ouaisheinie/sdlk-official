@@ -63,6 +63,8 @@ export const lang_en: LangType = {
         year6: '2022',
         event10: 'Establishment of Fanka',
         skip_fanka: 'Go to Fanka',
-        event11: 'VIVAIA was selected for the Brandz™ China Global Brand Growth Star List'
+        event11: 'VIVAIA was selected for the Brandz™ China Global Brand Growth Star List',
+        gotoVIVAIA: 'Go to VIVAIA',
+        gotoFanka: 'Go to Fanka'
     }
 }

@@ -28,8 +28,6 @@ export interface StageProps {
     pagination_img: string
 }
 
-// <svg t="1680771494553" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2611" width="32" height="32"><path d="M869 487.8L491.2 159.9c-2.9-2.5-6.6-3.9-10.5-3.9h-88.5c-7.4 0-10.8 9.2-5.2 14l350.2 304H152c-4.4 0-8 3.6-8 8v60c0 4.4 3.6 8 8 8h585.1L386.9 854c-5.6 4.9-2.2 14 5.2 14h91.5c1.9 0 3.8-0.7 5.2-2L869 536.2c14.7-12.8 14.7-35.6 0-48.4z" p-id="2612" fill="#182F39"></path></svg>
-
 const MileStone: React.FC<MileStoneProps> = props => {
     const [current, setCurrent] = useState<number>(0)
 
@@ -72,7 +70,7 @@ const MileStone: React.FC<MileStoneProps> = props => {
             year: useLangs('homepage', 'year4'),
             event: useLangs('homepage', 'event5'),
             background_color: '#9F5123',
-            skip_desc: '前往VIVAIA',
+            skip_desc: useLangs('homepage', 'gotoVIVAIA'),
             skip_url: 'https://www.vivaia.com',
             pagination_color: '#9F5123',
             pagination_img: 'https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/vivaia-fill.png'
@@ -119,8 +117,8 @@ const MileStone: React.FC<MileStoneProps> = props => {
             event: useLangs('homepage', 'event10'),
             background_color: '#D53F62',
             pagination_color: '#D53F62',
-            skip_desc: '前往VIVAIA',
-            skip_url: 'https://www.vivaia.com',
+            skip_desc: useLangs('homepage', 'gotoFanka'),
+            skip_url: 'https://www.fanka.com',
             pagination_img: 'https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/fanka-fill.png'
         },
         {

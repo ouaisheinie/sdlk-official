@@ -71,7 +71,8 @@ export const lang_cn: LangType = {
         year6: '2022年',
         event10: 'Fanka品牌成立',
         skip_fanka: '前往Fanka',
-        event11: 'VIVAIA入选 【Brandz™ 中国全球化品牌成长明星榜单】'
-
+        event11: 'VIVAIA入选 【Brandz™ 中国全球化品牌成长明星榜单】',
+        gotoVIVAIA: '前往VIVAIA',
+        gotoFanka: '前往Fanka'
     }
 }
