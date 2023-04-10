@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = props => {
     const handleChangeLanguage = (e: any): void => {
         setLang(e.target.value)
         setCookie('cookie_lang', e.target.value, 7)
-        location.reload()
+        window.location.href = "/"
     }
 
     return (

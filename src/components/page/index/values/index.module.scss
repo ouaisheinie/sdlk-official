@@ -11,18 +11,19 @@
         position: relative;
         .tabline {
             display: flex;
+            justify-content: space-between;
             margin-top: 40px;
             border-bottom: 1px solid rgba(24, 47, 57, 0.1);
             margin-bottom: 80px;
             z-index: 10;
             .tabItem {
-                width: 20%;
+                width: 18%;
                 font-size: 20px;
                 line-height: 26px;
                 cursor: pointer;
                 .tab_text {
                     color: rgba(24, 47, 57, 0.25);
-                    width: 50%;
+                    width: 100%;
                 }
                 .tab_selected {
                     color: #182F39;
