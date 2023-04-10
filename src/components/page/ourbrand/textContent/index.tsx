@@ -6,10 +6,11 @@ interface TextContentProps {
     textData: StringData
     skip_name: string
     skip_url: string
+    brand: string
 }
 
 const TextContent: React.FC<TextContentProps> = props => {
-    const { logoImage, textData, skip_url, skip_name } = props
+    const { logoImage, textData, skip_url, skip_name, brand } = props
     return (
         <div className={styles.container}>
             <div className={styles.logoImage_container}>
@@ -35,9 +36,9 @@ const TextContent: React.FC<TextContentProps> = props => {
                         <p className={styles.desc}>{ textData.subdesc3 }</p>
                     </div>
                 </div>
-                <a className={styles.buttondiv_vivaia} href={ skip_url }>
+                <a className={brand === 'vivaia' ? styles.buttondiv_vivaia : styles.buttondiv_fanka} href={ skip_url }>
                     { skip_name }
-                    <svg className={`icon ${styles.arrowRight}`} viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2752" width="18" height="18"><path d="M557.397333 167.204571l293.059048 293.059048L902.192762 512l-51.712 51.712-293.059048 293.083429-51.736381-51.712L762.148571 548.571429H121.904762v-73.142858h640.243809L505.660952 218.940952l51.736381-51.736381z" p-id="2753" fill="#9F5123"></path></svg>
+                    <svg className={`icon ${styles.arrowRight}`} viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2752" width="18" height="18"><path d="M557.397333 167.204571l293.059048 293.059048L902.192762 512l-51.712 51.712-293.059048 293.083429-51.736381-51.712L762.148571 548.571429H121.904762v-73.142858h640.243809L505.660952 218.940952l51.736381-51.736381z" p-id="2753" fill={brand === 'vivaia' ? '#9F5123' : '#D53F62'}></path></svg>
                 </a>
             </div>
         </div>
