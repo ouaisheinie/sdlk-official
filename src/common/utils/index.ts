@@ -1,3 +1,5 @@
+import { getSelectorsByUserAgent } from 'react-device-detect';
+
 export const getCookie = (cname: string, context: any): string => {
 	var name = cname + "="
     var ca: string[]
@@ -11,7 +13,7 @@ export const getCookie = (cname: string, context: any): string => {
 	return ""
 }
 
-export const setCookie = (key: string,value: string,day: number): void => {
+export const setCookie = (key: string, value: string, day: number): void => {
     var cookie=key + '=' + encodeURIComponent(value)
     if(day > 0){
          var date = new Date()
@@ -19,4 +21,11 @@ export const setCookie = (key: string,value: string,day: number): void => {
          cookie+=';expires=' + date
     }
     document.cookie=cookie
+}
+
+export const UserAgent = (context: any): boolean => {
+    const symbolKey: string | undefined | symbol = Reflect.ownKeys(context.req).find(key => key.toString() === 'Symbol(kHeaders)')
+    const userAgent = context.req[symbolKey as string]['user-agent']
+    const { isMobile } = getSelectorsByUserAgent(userAgent)
+    return isMobile
 }
