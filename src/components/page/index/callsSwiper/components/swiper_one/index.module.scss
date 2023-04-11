@@ -1,5 +1,13 @@
-.swiper_content {
-    width: 100%;
-    overflow: hidden;
-    height: 450px;
+@media screen and (min-width: 769px) {
+    .swiper_content {
+        width: 100%;
+        overflow: hidden;
+        height: 450px;
+    }
+}
+@media screen and (max-width: 768px) {
+    .swiper_content {
+        width: 100%;
+        overflow: hidden;
+    }
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import styles from './index.module.scss'
+import { useIsMobile } from '@/common/utils/langs'
 
 interface PropsTypes {
     imageList: string[],
@@ -9,13 +10,17 @@ interface PropsTypes {
 
 export default function Marquee(props: PropsTypes) {
     const [instance, setInstance] = useState<number>(0)
+    const isMobile = useIsMobile()
 
     useEffect(() => {
+        let num: number
+        if (isMobile) num = 600
+        else num = 1100
+        
         let timer: ReturnType<typeof setTimeout>
-
         if (props.slideDir === 'left') {
             timer = setInterval(() => {
-                if (instance >= 1100) {
+                if (instance >= num) {
                     setInstance(0)
                 } else setInstance(instance + 2)
             }, 16)
@@ -23,7 +28,7 @@ export default function Marquee(props: PropsTypes) {
 
             timer = setInterval(() => {
                 if (instance <= 0) {
-                    setInstance(1100)
+                    setInstance(num)
                 } else setInstance(instance - 2)
             }, 16)
         }

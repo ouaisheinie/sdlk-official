@@ -4,7 +4,7 @@ import ContentOther from "./components/swiper_other"
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Pagination } from 'swiper';
 import { useState } from "react";
-import { useLangs } from '@/common/utils/langs'
+import { useLangs, useIsMobile } from '@/common/utils/langs'
 
 export interface SwiperItemProps {
     itemType: number,
@@ -17,6 +17,7 @@ interface PropsTypes {
 
 }
 export default function CallsSwiper(props: PropsTypes) {
+    const isMobile = useIsMobile()
     const itemData: SwiperItemProps[] = [
         {
             itemType: 1,
@@ -27,19 +28,19 @@ export default function CallsSwiper(props: PropsTypes) {
             itemType: 2,
             item_subtitle: useLangs('homepage', 'calls_2nd_subTitle'),
             item_title: useLangs('homepage', 'calls_2nd_title'),
-            image_src: 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/worker.jpg'
+            image_src: isMobile ? 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/worker-m.jpg' : 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/worker.jpg'
         },
         {
             itemType: 3,
             item_subtitle: useLangs('homepage', 'calls_3rd_subTitle'),
             item_title: useLangs('homepage', 'calls_3rd_title'),
-            image_src: 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/partner.jpg'
+            image_src: isMobile ? 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/partner-m.jpg' : 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/partner.jpg'
         },
         {
             itemType: 4,
             item_subtitle: useLangs('homepage', 'calls_4th_subTitle'),
             item_title: useLangs('homepage', 'calls_4th_title'),
-            image_src: 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/orwner.jpg'
+            image_src: isMobile ? 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/orwner-m.jpg' : 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/orwner.jpg'
         },
     ]
 

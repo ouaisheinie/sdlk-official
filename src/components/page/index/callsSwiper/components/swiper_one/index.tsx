@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import styles from "./index.module.scss"
 import Marquee from './marquee'
-
+import { useIsMobile } from '@/common/utils/langs'
 interface PropsTypes {
 
 }
@@ -34,10 +34,12 @@ export default function SwiperOne(props: PropsTypes) {
         ]
     ])
 
+    const isMobile = useIsMobile()
+
     return (
         <div className={styles.swiper_content}>
-            <Marquee imageList={images[0]} slideDir="left" marginbottom={20}/>
-            <Marquee imageList={images[1]} slideDir="right" marginbottom={40}/>
+            <Marquee imageList={images[0]} slideDir="left" marginbottom={isMobile ? 10 : 20}/>
+            <Marquee imageList={images[1]} slideDir="right" marginbottom={isMobile ? 20 : 40}/>
         </div>
     )
 } 

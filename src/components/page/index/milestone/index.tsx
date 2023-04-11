@@ -7,6 +7,7 @@ import StageComp from './components/stageComp'
 import Pagination from './components/pagination'
 import { useLangs } from '@/common/utils/langs'
 import { useState } from 'react'
+import { useIsMobile } from '@/common/utils/langs'
 
 interface MileStoneProps {
 
@@ -30,7 +31,7 @@ export interface StageProps {
 
 const MileStone: React.FC<MileStoneProps> = props => {
     const [current, setCurrent] = useState<number>(0)
-
+    const isMobile = useIsMobile()
     const stageData: StageProps[] = [
         {
             logo_img: 'https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/logo_white.png',
@@ -138,11 +139,15 @@ const MileStone: React.FC<MileStoneProps> = props => {
 
     return (
         <div className={styles.milestone_container}>
-            <HalfCircle dir="left" top={270}/>
+            {
+                !isMobile && <HalfCircle dir="left" top={270}/>
+            }
             <ContentLayout>
                 <div className={styles.milestone_div}>
                     <h3 className={styles.title}>里程碑</h3>
-                    <p className={styles.desc}>大事记</p>
+                    {
+                        !isMobile && <p className={styles.desc}>大事记</p>
+                    }
                     <div className={styles.milestone_swiper}>
                         <Swiper
                             className="milestone-Swiper"

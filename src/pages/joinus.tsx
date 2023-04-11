@@ -9,6 +9,7 @@ import ContentLayout from "@/components/layoutcomp"
 
 interface JoinusProps {
 	cookielang: string
+    resolvedUrl: string
 }
 
 export interface ItemDataProps {
@@ -129,9 +130,12 @@ export default function Joinus(props: JoinusProps): ReactNode {
 
 export async function getServerSideProps(context: any) {
 	const cookielang = getCookie('cookie_lang', context) || 'cn'
+    const resolvedUrl = context.resolvedUrl
+
 	return {
 		props: {
-			cookielang
+			cookielang,
+            resolvedUrl
 		}
 	}
 }

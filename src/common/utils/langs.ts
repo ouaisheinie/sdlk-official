@@ -1,10 +1,14 @@
 import { useEffect, useContext } from "react"
 import { C_Content } from "@/pages/_app"
+import { IndexProvider } from '@/pages/index'
 
 interface langInterface {
     langdata?: any
     lang: string
     setLang?: any
+}
+interface IndexInterface {
+	isMobile: boolean
 }
 
 // 获取语言的公共hooks
@@ -18,4 +22,10 @@ export const useInjectLang = (langCode: string): void => {
     if (langCode && lang !== langCode) {
         setLang(langCode)
     }
+}
+
+export const useIsMobile = (): boolean => {
+    const isMobile = useContext<IndexInterface>(IndexProvider).isMobile
+    return isMobile
+
 }

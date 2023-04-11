@@ -109,3 +109,88 @@
 .milestone-Swiper .swiper-button-disabled {
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+    .mySwiper {
+        position: relative;
+        height: 100%;
+    }
+    .mySwiper .contentOne-slide {
+        padding-top: 20px;
+    }
+    .mySwiper .swiper-button-prev {
+        position: absolute;
+        top: 320px;
+        bottom: 40px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 50%;
+        color: #FF8B08;
+        background: rgba(255, 139, 8, 0.07);
+    }
+    .mySwiper .swiper-button-prev::after {
+        position: relative;
+        right: 2px;
+        font-size: 16px;
+    }
+    .mySwiper .swiper-button-next {
+        transition: all .2s;
+        position: absolute;
+        top: 320px;
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 50%;
+        color: #FF8B08;
+        background: rgba(255, 139, 8, 0.07);
+    }
+    .mySwiper .swiper-button-next::after {
+        position: relative;
+        right: 2px;
+        font-size: 16px;
+    }
+    .mySwiper .swiper-pagination {
+        position: absolute;
+        bottom: 0px;
+    }
+
+
+    .milestone-Swiper {
+        position: relative;
+    }
+    .milestone-Swiper .swiper-button-prev {
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+        border-radius: 50%;
+        color: #FF8B08;
+        background: rgba(255, 139, 8, 0.07);
+        position: absolute;
+        left: 0px;
+        margin-left: 0px;
+    }
+    .milestone-Swiper .swiper-button-next {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 16px;
+        color: #FF8B08;
+        background: rgba(255, 139, 8, 0.07);
+        right: 0px;
+        margin-right: 0px;
+    }
+    .milestone-Swiper .swiper-button-next::after {
+        font-size: 16px;
+        position: relative;
+        left: 3px;
+    }
+    .milestone-Swiper .swiper-button-prev::after {
+        position: relative;
+        font-size: 16px;
+        right: 3px;
+    }
+    .milestone-Swiper .swiper-button-disabled {
+        display: none;
+    }
+}

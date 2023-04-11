@@ -59,8 +59,8 @@ const Footer: React.FC<FooterProps> = props => {
                                 <option value="cn">Chinese</option>
                             </select>
                         </div>
-                        <div>Copyright © Starlink</div>
-                        <div>粤ICP备18131415号</div>
+                        <div className={styles.starlinke}>Copyright © Starlink</div>
+                        <div className={styles.beian}>粤ICP备18131415号</div>
                     </div>
                 </div>
             </ContentLayout>

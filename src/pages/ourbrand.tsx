@@ -9,6 +9,7 @@ import Anchor from '@/components/anchor'
 
 interface HomeProps {
 	cookielang: string
+    resolvedUrl: string
 }
 
 export interface StringData {
@@ -141,9 +142,12 @@ export default function OurBrand(props: HomeProps): ReactNode {
 
 export async function getServerSideProps(context: any) {
 	const cookielang = getCookie('cookie_lang', context) || 'cn'
+    const resolvedUrl = context.resolvedUrl
+
 	return {
 		props: {
-			cookielang
+			cookielang,
+            resolvedUrl
 		}
 	}
 }
