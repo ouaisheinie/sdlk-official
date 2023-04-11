@@ -27,7 +27,9 @@ export default function Header(props: HeaderProps) {
 			<ContentLayout>
 				<div className={styles.logo_navbar}>
 					<div className={styles.logo}>
-						<Image objectFit='contain' layout="fill" src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/starlinke-whitebg.png" alt="STARLINKE"/>
+                        <picture>
+                            <img style={{ display: 'inline-block', width: 200, height: 50 }} src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/starlinke-whitebg.png" alt="STARLINKE" />
+                        </picture>
 					</div>
 					<div className={styles.navbar}>
 						<div className={styles.navItem} 
