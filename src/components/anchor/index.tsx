@@ -1,5 +1,5 @@
 import styles from './index.module.scss'
-
+import { useBrandMobile } from '@/common/utils/langs'
 interface AnchorProps {
     brand: string
     setBrand: Function
@@ -11,9 +11,19 @@ const Anchor: React.FC<AnchorProps> = props => {
         const tar = brand === 'vivaia' ? 'fanka' : 'vivaia'
         setBrand(tar)
     }
+    let val1: object = { right: 20 } , val2: object = { left: 20, flexDirection: 'row-reverse' }
+    const isMobile = useBrandMobile()
+    if (isMobile) {
+        val1 = {
+
+        }
+        val2 = {
+
+        }
+    }
 
     return (
-        <div className={styles.anchordiv} onClick={handleClickAnchor} style={ brand === 'vivaia' ? { right: 20 } : { left: 20, flexDirection: 'row-reverse' }}>
+        <div className={styles.anchordiv} onClick={handleClickAnchor} style={ brand === 'vivaia' ? val1 : val2}>
             {
                 brand === 'fanka' ? <div className={styles.logofanka}>
                     <picture>

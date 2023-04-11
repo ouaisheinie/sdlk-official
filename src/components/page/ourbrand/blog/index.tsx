@@ -10,7 +10,7 @@ interface BlogsProps {
 const Blogs: React.FC<BlogsProps> = props => {
     const { blogData, blog_title } = props
     return (
-        <ContentLayout>
+        <ContentLayout style_obj={{ paddingRight: 0 }}>
             <div className={styles.title}>{ blog_title }</div>
             <div className={styles.blogs}>
                 {

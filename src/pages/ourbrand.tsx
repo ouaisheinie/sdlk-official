@@ -1,7 +1,8 @@
-import { ReactNode, useState } from "react";
-import { getCookie } from '@/common/utils/index'
+import { createContext, ReactNode, useState } from "react";
+import { getCookie, UserAgent } from '@/common/utils/index'
 import { useInjectLang } from '@/common/utils/langs'
 import Header from '@/components/header'
+import HeaderMobile from '@/components/headerMobile'
 import styles from './styles/ourbrand.module.scss'
 import TextContent from '@/components/page/ourbrand/textContent'
 import Blogs from '@/components/page/ourbrand/blog'
@@ -10,6 +11,7 @@ import Anchor from '@/components/anchor'
 interface HomeProps {
 	cookielang: string
     resolvedUrl: string
+    isMobile: boolean
 }
 
 export interface StringData {
@@ -25,9 +27,14 @@ interface OurBrandDataProps {
     blog_title: string
 }
 
+interface BrandInterface {
+    isMobile: boolean
+}
+export const BrandProvider = createContext<BrandInterface>({} as BrandInterface)
+
 export default function OurBrand(props: HomeProps): ReactNode {
     useInjectLang(props.cookielang)
-
+    const { isMobile } = props
     const [brand, setBrand] = useState<string>('vivaia')
 
     const ourbrandData: OurBrandDataProps = {
@@ -111,43 +118,49 @@ export default function OurBrand(props: HomeProps): ReactNode {
     }
 
     return (
-        <>
-            <div className={styles.topbanner}>
-                <video style={{ width: '100%' }}src="https://cdnimg.vivaia.com/VA/video/Banner/20221220_5142/20221206-1920x800_3.mp4" controls={false} autoPlay muted>
-                    您的浏览器不支持 video 标签。
-                </video>
-                <div className={styles.header}>
-                    <Header backgroundColor="transparent" hoverBgColor="rgb(255, 139, 8)" />
+        <BrandProvider.Provider value={{ isMobile }}>
+            <>
+                <div className={styles.topbanner}>
+                    <video style={{ width: '100%' }} src="https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/VIVAIA-video-m.mp4" controls={false} autoPlay muted>
+                        您的浏览器不支持 video 标签。
+                    </video>
+                    <div className={styles.header}>
+                        {
+                            !isMobile ? <Header backgroundColor="transparent" hoverBgColor="rgb(255, 139, 8)" /> : <HeaderMobile backgroundColor="transparent" hoverBgColor="rgb(255, 139, 8)" resolvedUrl={"/ourbrand"}/>
+                        }
+                    </div>
+                    <div className={styles.videologo}>
+                        <picture>
+                            <img src={brand === 'vivaia' ? 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/VIVAIA.png' : 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/Fanka.png'} alt="VIVAIA" />
+                        </picture>
+                    </div>
                 </div>
-                <div className={styles.videologo}>
-                    <picture>
-                        <img src={brand === 'vivaia' ? 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/VIVAIA.png' : 'https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/Fanka.png'} alt="VIVAIA" />
-                    </picture>
-                </div>
-            </div>
-            {
-                brand === 'vivaia' ? 
-                <TextContent logoImage={ourbrandData.logo_img} textData={ourbrandData.text_data} skip_url={ourbrandData.skip_url} skip_name={ourbrandData.skip_name} brand={brand} /> : 
-                <TextContent logoImage={fankaData.logo_img} textData={fankaData.text_data} skip_url={fankaData.skip_url} skip_name={fankaData.skip_name} brand={brand} />
-            }
-            {
-                brand === 'vivaia' ? <Blogs blogData={ourbrandData.blog_data} blog_title={ourbrandData.blog_title}/> : 
-                <Blogs blogData={fankaData.blog_data} blog_title={fankaData.blog_title}/>
+                {
+                    brand === 'vivaia' ? 
+                    <TextContent logoImage={ourbrandData.logo_img} textData={ourbrandData.text_data} skip_url={ourbrandData.skip_url} skip_name={ourbrandData.skip_name} brand={brand} /> : 
+                    <TextContent logoImage={fankaData.logo_img} textData={fankaData.text_data} skip_url={fankaData.skip_url} skip_name={fankaData.skip_name} brand={brand} />
+                }
+                {
+                    brand === 'vivaia' ? <Blogs blogData={ourbrandData.blog_data} blog_title={ourbrandData.blog_title}/> : 
+                    <Blogs blogData={fankaData.blog_data} blog_title={fankaData.blog_title}/>
 
-            }
-            <Anchor brand={brand} setBrand={setBrand}/>
-        </>
+                }
+                <Anchor brand={brand} setBrand={setBrand}/>
+            </>
+        </BrandProvider.Provider>
     )
 }
 
 export async function getServerSideProps(context: any) {
 	const cookielang = getCookie('cookie_lang', context) || 'cn'
     const resolvedUrl = context.resolvedUrl
+    const isMobile = UserAgent(context)
 
 	return {
 		props: {
 			cookielang,
-            resolvedUrl
+            resolvedUrl,
+            isMobile
 		}
 	}
 }

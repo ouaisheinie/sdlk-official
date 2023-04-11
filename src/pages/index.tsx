@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext } from "react";
 import Header from '@/components/header'
-import HeaderMobild from '@/components/headerMobile'
+import HeaderMobile from '@/components/headerMobile'
 import TopBanner from '@/components/topbanner'
 import Calls from '@/components/page/index/calls'
 import Values from '@/components/page/index/values'
@@ -29,7 +29,7 @@ export default function Home(props: HomeProps ): ReactNode {
 		<IndexProvider.Provider value={{ isMobile }}>
 			<div style={{ background: '#f5f5f5' }}>
 				{
-					!isMobile ? <Header /> : <HeaderMobild resolvedUrl={resolvedUrl}/>
+					!isMobile ? <Header /> : <HeaderMobile resolvedUrl={resolvedUrl}/>
 				}
 				<TopBanner />
 				<Calls />

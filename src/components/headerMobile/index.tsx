@@ -6,10 +6,13 @@ import { useLangs } from '@/common/utils/langs'
 
 interface HeaderMobileProps {
     resolvedUrl: string
+    backgroundColor?: string
+    hoverBgColor?: string
 }
 
 const HeaderMobile: React.FC<HeaderMobileProps> = props => {
     const { resolvedUrl } = props
+    const { backgroundColor, hoverBgColor = "rgba(221, 221, 221,.2)" } = props
 
     const [folding, setFolding] = useState<boolean>(true)
 
@@ -26,7 +29,9 @@ const HeaderMobile: React.FC<HeaderMobileProps> = props => {
     const tab3 = useLangs('common', 'joinus')
 
     return (
-        <div className={styles.header_container}>
+        <div className={styles.header_container} style={{ 
+            backgroundColor: backgroundColor ? backgroundColor : '#FF8B08'
+        }}>
             <Image className={styles.logo} src="https://cdnimg.vivaia.com/VA/image/Banner/20230331_5378/starlinke-whitebg.png" alt="STARLINKE" width={150} height={36}/>
             {
                 folding 

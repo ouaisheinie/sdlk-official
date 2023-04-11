@@ -1,62 +1,126 @@
-.anchordiv {
-    width: 220px;
-    height: 80px;
-    padding: 0 30px;
-    display: flex;
-    align-items: center;
-    border: 2px solid rgba($color: #000000, $alpha: 0.05);
-    box-sizing: border-box;
-    border-radius: 20px;
-    position: fixed;
-    bottom: 20px;
-    cursor: pointer;
-    justify-content: space-between;
-    @mixin logo {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
+@media screen and (min-width: 769px) {
+    .anchordiv {
+        width: 220px;
+        height: 80px;
+        padding: 0 30px;
         display: flex;
-        justify-content: center;
         align-items: center;
+        border: 2px solid rgba($color: #000000, $alpha: 0.05);
+        box-sizing: border-box;
+        border-radius: 20px;
+        position: fixed;
+        bottom: 20px;
+        cursor: pointer;
+        justify-content: space-between;
+        @mixin logo {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logofanka {
+            @include logo;
+            background-color: #9F5123;
+            img {
+                display: inline-block;
+                width: 26px;
+                height: 24px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        .logoVivaia {
+            @include logo;
+            background-color: #D53F62;
+            img {
+                display: inline-block;
+                width: 18px;
+                height: 28px;
+                position: relative;
+                top: 2px;
+            }
+        }
+        .brand1 {
+            margin-left: 20px;
+            font-size: 14px;
+            line-height: 18px;
+            color: #182F39;
+        }
+        .brand2 {
+            margin-right: 20px;
+            font-size: 14px;
+            line-height: 18px;
+            color: #182F39;
+        }
+        .svg1 {
+            margin-left: 20px;
+        }
+        .svg2 {
+            margin-right: 20px;
+        }
     }
-    .logofanka {
-        @include logo;
-        background-color: #9F5123;
-        img {
-            display: inline-block;
-            width: 26px;
+}
+
+@media screen and (max-width: 768px) {
+    .anchordiv {
+        width: 128px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+        border: 2px solid rgba($color: #000000, $alpha: 0.05);
+        box-sizing: border-box;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        justify-content: space-between;
+        @mixin logo {
+            width: 24px;
             height: 24px;
-            position: relative;
-            top: 2px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-    }
-    .logoVivaia {
-        @include logo;
-        background-color: #D53F62;
-        img {
-            display: inline-block;
-            width: 18px;
-            height: 28px;
-            position: relative;
-            top: 2px;
+        .logofanka {
+            @include logo;
+            background-color: #9F5123;
+            img {
+                display: inline-block;
+                width: 13px;
+                height: 12px;
+                position: relative;
+            }
         }
-    }
-    .brand1 {
-        margin-left: 20px;
-        font-size: 14px;
-        line-height: 18px;
-        color: #182F39;
-    }
-    .brand2 {
-        margin-right: 20px;
-        font-size: 14px;
-        line-height: 18px;
-        color: #182F39;
-    }
-    .svg1 {
-        margin-left: 20px;
-    }
-    .svg2 {
-        margin-right: 20px;
+        .logoVivaia {
+            @include logo;
+            background-color: #D53F62;
+            img {
+                display: inline-block;
+                width: 9px;
+                height: 14px;
+                position: relative;
+            }
+        }
+        .brand1 {
+            margin-left: 8px;
+            font-size: 14px;
+            line-height: 18px;
+            color: #182F39;
+        }
+        .brand2 {
+            margin-right: 8px;
+            font-size: 14px;
+            line-height: 18px;
+            color: #182F39;
+        }
+        .svg1 {
+            margin-left: 20px;
+        }
+        .svg2 {
+            margin-right: 20px;
+        }
     }
 }

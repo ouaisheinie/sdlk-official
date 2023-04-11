@@ -19,3 +19,27 @@
         }
     }
 }
+
+@media screen and (max-width: 768px) {
+    .topbanner {
+        position: relative;
+        font-size: 0px;
+        .header {
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        .videologo {
+            position: absolute;
+            height: 30px;
+            width: 100%;
+            top: calc(50% - 30px);
+            text-align: center;
+            user-select: none;
+            img {
+                display: inline-block;
+                height: 30px;
+            }
+        }
+    }
+}

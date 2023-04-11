@@ -1,6 +1,7 @@
 import { useEffect, useContext } from "react"
 import { C_Content } from "@/pages/_app"
 import { IndexProvider } from '@/pages/index'
+import { BrandProvider } from '@/pages/ourbrand'
 
 interface langInterface {
     langdata?: any
@@ -27,5 +28,9 @@ export const useInjectLang = (langCode: string): void => {
 export const useIsMobile = (): boolean => {
     const isMobile = useContext<IndexInterface>(IndexProvider).isMobile
     return isMobile
+}
 
+export const useBrandMobile = (): boolean => {
+    const isMobile = useContext<IndexInterface>(BrandProvider).isMobile
+    return isMobile
 }
