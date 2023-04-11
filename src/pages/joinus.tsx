@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
-import { getCookie } from '@/common/utils/index'
-import { useInjectLang } from '@/common/utils/langs'
+import { createContext, ReactNode } from "react";
+import { getCookie, UserAgent } from '@/common/utils/index'
+import { useInjectLang, useJoinusMobile } from '@/common/utils/langs'
 import styles from './styles/joinus.module.scss'
 import Header from '@/components/header'
+import HeaderMobile from "@/components/headerMobile";
 import Footer from '@/components/footer'
 import BlockItem from '@/components/page/joinus/blockitem'
 import ContentLayout from "@/components/layoutcomp"
@@ -10,6 +11,7 @@ import ContentLayout from "@/components/layoutcomp"
 interface JoinusProps {
 	cookielang: string
     resolvedUrl: string
+    isMobile: boolean
 }
 
 export interface ItemDataProps {
@@ -20,6 +22,12 @@ export interface ItemDataProps {
     btn_text: string
     skip_url: string
 }
+
+interface IndexInterface {
+	isMobile: boolean
+}
+
+export const JoinusProvider = createContext<IndexInterface>({} as IndexInterface)
 
 export default function Joinus(props: JoinusProps): ReactNode {
     useInjectLang(props.cookielang)
@@ -101,41 +109,50 @@ export default function Joinus(props: JoinusProps): ReactNode {
     ]
 
     return (
-        <>
-            <Header />
-            <div className={styles.topBanner}>
-                <picture>
-                    <img className={styles.topbannerImage} src="https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/join%20us.jpg" alt="alt" />
-                    <div className={styles.topBannerText}>
-                        <h2 className={styles.title}>加入我们</h2>
-                        <p className={styles.desc}>创造不断进步</p>
-                    </div>
-                </picture>
-            </div>
-            <ContentLayout>
-                <div className={styles.block_containers}>
-                    {
-                        items.map((item, index) => {
-                            return <BlockItem key={index} data={item} number={index} />
-                        })
-                    }
+        <JoinusProvider.Provider value={{ isMobile: props.isMobile }}>
+            <>
+                {
+                    !props.isMobile ? <Header /> : <HeaderMobile resolvedUrl={"/joinus"}/>
+                }
+                <div className={styles.topBanner}>
+                    <picture>
+                        <video style={{ width: '100%' }} src="https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/Fanka-video-m.mp4" controls={false} autoPlay muted>
+                            您的浏览器不支持 video 标签。
+                        </video>
+                        <div className={styles.topBannerText}>
+                            <h2 className={styles.title}>加入我们</h2>
+                            <p className={styles.desc}>创造不断进步</p>
+                        </div>
+                    </picture>
                 </div>
-            </ContentLayout>
-            <div style={{ marginTop: 120 }}>
-                <Footer />
-            </div>
-        </>
+                <ContentLayout>
+                    <div className={styles.block_containers}>
+                        {
+                            items.map((item, index) => {
+                                return <BlockItem key={index} data={item} number={index} />
+                            })
+                        }
+                    </div>
+                </ContentLayout>
+                <div style={{ marginTop: 60 }}>
+                    <Footer />
+                </div>
+            </>
+        </JoinusProvider.Provider>
     )
 }
 
 export async function getServerSideProps(context: any) {
 	const cookielang = getCookie('cookie_lang', context) || 'cn'
     const resolvedUrl = context.resolvedUrl
-
+    console.log(useJoinusMobile)
+    const isMobile = UserAgent(context)
+    
 	return {
 		props: {
 			cookielang,
-            resolvedUrl
+            resolvedUrl,
+            isMobile
 		}
 	}
 }

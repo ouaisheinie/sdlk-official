@@ -7,7 +7,7 @@ import Values from '@/components/page/index/values'
 import MileStone from '@/components/page/index/milestone'
 import Footer from '@/components/footer'
 import { getCookie, UserAgent } from '@/common/utils/index'
-import { useInjectLang, useIsMobile } from '@/common/utils/langs'
+import { useInjectLang } from '@/common/utils/langs'
 
 interface HomeProps {
 	cookielang: string

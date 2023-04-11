@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react"
 import { C_Content } from "@/pages/_app"
 import { IndexProvider } from '@/pages/index'
 import { BrandProvider } from '@/pages/ourbrand'
-
+import { JoinusProvider } from '@/pages/joinus'
 interface langInterface {
     langdata?: any
     lang: string
@@ -32,5 +32,10 @@ export const useIsMobile = (): boolean => {
 
 export const useBrandMobile = (): boolean => {
     const isMobile = useContext<IndexInterface>(BrandProvider).isMobile
+    return isMobile
+}
+
+export const useJoinusMobile = (): boolean => {
+    const isMobile = useContext<IndexInterface>(JoinusProvider).isMobile
     return isMobile
 }
