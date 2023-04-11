@@ -41,16 +41,15 @@ export default function Home(props: HomeProps ): ReactNode {
 	)
 }
 
-export async function getServerSideProps(context: any) {
-	const cookielang = getCookie('cookie_lang', context) || 'cn'
-    const isMobile = UserAgent(context)
+export async function getServerSideProps (context: any) {
+    const cookielang = context.req.cookies.cookie_lang || 'cn'
 	const resolvedUrl = context.resolvedUrl
-
-	return {
-		props: {
-			cookielang,
+    const isMobile = UserAgent(context)
+    return {
+        props: {
+            cookielang,
             isMobile,
-			resolvedUrl
-		}
+            resolvedUrl
+        }
 	}
 }

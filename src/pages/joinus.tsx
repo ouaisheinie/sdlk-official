@@ -29,7 +29,7 @@ interface IndexInterface {
 
 export const JoinusProvider = createContext<IndexInterface>({} as IndexInterface)
 
-export default function Joinus(props: JoinusProps): ReactNode {
+function Joinus(props: JoinusProps): ReactNode {
     useInjectLang(props.cookielang)
 
     const items: ItemDataProps[] = [
@@ -143,16 +143,17 @@ export default function Joinus(props: JoinusProps): ReactNode {
 }
 
 export async function getServerSideProps(context: any) {
-	const cookielang = getCookie('cookie_lang', context) || 'cn'
+    const cookielang = context.req.cookies.cookie_lang || 'cn'
     const resolvedUrl = context.resolvedUrl
-    console.log(useJoinusMobile)
     const isMobile = UserAgent(context)
     
 	return {
-		props: {
-			cookielang,
+        props: {
+            cookielang,
             resolvedUrl,
             isMobile
-		}
+        }
 	}
 }
+
+export default Joinus

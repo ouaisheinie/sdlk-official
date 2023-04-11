@@ -32,7 +32,7 @@ interface BrandInterface {
 }
 export const BrandProvider = createContext<BrandInterface>({} as BrandInterface)
 
-export default function OurBrand(props: HomeProps): ReactNode {
+function OurBrand(props: HomeProps): ReactNode {
     useInjectLang(props.cookielang)
     const { isMobile } = props
     const [brand, setBrand] = useState<string>('vivaia')
@@ -152,15 +152,17 @@ export default function OurBrand(props: HomeProps): ReactNode {
 }
 
 export async function getServerSideProps(context: any) {
-	const cookielang = getCookie('cookie_lang', context) || 'cn'
+    const cookielang = context.req.cookies.cookie_lang || 'cn'
     const resolvedUrl = context.resolvedUrl
     const isMobile = UserAgent(context)
 
 	return {
-		props: {
-			cookielang,
+        props: {
+            cookielang,
             resolvedUrl,
             isMobile
-		}
+        }
 	}
 }
+
+export default OurBrand
