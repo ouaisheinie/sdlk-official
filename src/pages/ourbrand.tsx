@@ -117,11 +117,22 @@ function OurBrand(props: HomeProps): ReactNode {
         ]
     }
 
+    const getVideo_src = (): string => {
+        let video_src: string = ''
+        if (brand === 'vivaia') {
+            if (isMobile) video_src = 'https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/VIVAIA-video-m.mp4'
+            else video_src = 'https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/VIVAIA-video-pc.mp4'
+        } else if (brand === 'fanka') {
+            if (isMobile) video_src = 'https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/Fanka-video-m.mp4'
+            else video_src = 'https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/Fanka-video-pc.mp4'
+        }
+        return video_src
+    }
     return (
         <BrandProvider.Provider value={{ isMobile }}>
             <>
                 <div className={styles.topbanner}>
-                    <video style={{ width: '100%' }} src="https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/VIVAIA-video-m.mp4" controls={false} autoPlay muted>
+                    <video style={{ width: '100%' }} src={getVideo_src()} controls={false} autoPlay muted>
                         您的浏览器不支持 video 标签。
                     </video>
                     <div className={styles.header}>

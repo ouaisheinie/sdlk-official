@@ -116,9 +116,9 @@ function Joinus(props: JoinusProps): ReactNode {
                 }
                 <div className={styles.topBanner}>
                     <picture>
-                        <video style={{ width: '100%' }} src="https://cdnimg.vivaia.com/SLK/video/Banner/20230403_5400/Fanka-video-m.mp4" controls={false} autoPlay muted>
-                            您的浏览器不支持 video 标签。
-                        </video>
+                        <picture>
+                            <img style={{ width: '100%'}} src="https://cdnimg.vivaia.com/SLK/image/Banner/20230403_5400/join%20us.jpg" alt="starlinke" />
+                        </picture>
                         <div className={styles.topBannerText}>
                             <h2 className={styles.title}>加入我们</h2>
                             <p className={styles.desc}>创造不断进步</p>
