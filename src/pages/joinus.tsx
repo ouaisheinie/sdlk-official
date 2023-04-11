@@ -156,4 +156,15 @@ export async function getServerSideProps(context: any) {
 	}
 }
 
+/* Joinus.getInitialProps = (context: any) => {
+    const cookielang = context.req.cookies.cookie_lang || 'cn'
+	const resolvedUrl = context.resolvedUrl
+    const isMobile = UserAgent(context)
+    return {
+        cookielang,
+        isMobile,
+        resolvedUrl
+	}
+} */
+
 export default Joinus

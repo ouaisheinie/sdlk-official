@@ -21,7 +21,7 @@ interface IndexInterface {
 
 export const IndexProvider = createContext<IndexInterface>({} as IndexInterface)
 
-export default function Home(props: HomeProps ): ReactNode {
+function Home(props: HomeProps ): ReactNode {
     const { cookielang, isMobile, resolvedUrl } = props
 	useInjectLang(cookielang)
 
@@ -53,3 +53,16 @@ export async function getServerSideProps (context: any) {
         }
 	}
 }
+
+// Home.getInitialProps = (context: any) => {
+//     const cookielang = context.req.cookies.cookie_lang || 'cn'
+// 	const resolvedUrl = context.resolvedUrl
+//     const isMobile = UserAgent(context)
+//     return {
+//         cookielang,
+//         isMobile,
+//         resolvedUrl
+// 	}
+// }
+
+export default Home
