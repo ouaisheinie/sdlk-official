@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ContentLayout from "@/components/layoutcomp"
 import { useLangs } from '@/common/utils/langs'
+import { imageLoader } from '@/common/imgloader'
 
 interface HeaderProps {
     backgroundColor?: string
